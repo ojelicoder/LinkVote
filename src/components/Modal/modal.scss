@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+
+.modal{
+    &_backdrop{
+        background: rgba(0, 0, 0, .65);
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    &_container{
+        background-color: $color-mercury;
+        max-width: 100%;
+        margin: 150px auto;
+        width: 500px;
+    }
+    &_header{
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $color-black;
+        color: $color-white;
+        padding: 10px 20px;
+
+        &-title{
+            margin: 0;
+            font-weight: 500;
+        }
+    }
+    &_close{
+        background: transparent;
+        color: $color-white;
+        cursor: pointer;
+        font-size: 25px;
+        border: 0;
+    }
+    &_content{
+        text-align: center;
+        margin: 30px 0;
+        color: $color-hardcoal;
+        font-weight: 500;
+    }
+    &_name{
+        text-transform: capitalize;
+        margin: 0;
+        font-size: 32px;
+        color: $color-black;
+    }
+    &_footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        width: 60%;
+        margin: 0 auto;
+
+        &-cancel, &-confirm{
+            cursor: pointer;
+            font-weight: 700;
+            width: 120px;
+            height: 40px;
+            background-color: $color-black;
+            color: $color-white;
+            border-radius: 30px;
+            font-size: 22px;
+        }
+    }
+}

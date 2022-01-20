@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+
+.select {
+    border-radius: 2px;
+    position: relative;
+    width: 200px;
+    border: 1px solid $color-steam;
+
+    &_wrapper{
+        padding: 15px 5px;
+        width: 100%;
+    }
+
+    &-line{
+        border-top: 2px solid $color-steam;
+        height: 2px;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        width: calc(100% + 30px);
+    }
+
+    &-arrow{
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        background-color: $color-lynx-white;
+        right: 0;
+        top: 0;
+        pointer-events: none;
+        color: $color-black;
+        border-left: 1px solid $color-steam;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        
+        svg{
+            margin-bottom: 10px;
+        }
+    }
+}
+  
+select {
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 30px 8px 8px;
+    border: none;
+    background-color: $color-lynx-white;
+    color: $color-black;
+    outline: none;
+}

@@ -1,0 +1,28 @@
+@mixin itemStyle{
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px 25px;
+
+    &_page{
+        @include itemStyle();
+        padding: 2px 7px;
+        font-weight: 700;
+        font-size: 18px;
+
+        &.active{
+            border: 1px solid
+        }
+    }
+    &_next{
+        @include itemStyle();
+    }
+    &_prev{
+        @include itemStyle();
+    }
+}

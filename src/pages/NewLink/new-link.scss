@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.new-link{
+    width: 100%;
+    
+    &_return{
+        font-size: 16px;
+    }
+    &_icon{
+        margin-right: 10px;
+    }
+    &_title{
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin: 35px 0;
+    }
+    &_input{
+        border-radius: 5px;
+        border: 1px solid $color-palladium;
+        font-size: 18px;
+        padding: 12px 10px;
+        
+        &::placeholder {
+            opacity: .4;
+        }
+
+        &-container{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+        }
+        &-name{
+            font-size: 16px;
+            line-height: 25px;
+            margin-left: 5px;
+        }
+    }
+    &_add{
+        background: $color-black;
+        border-radius: 30px;
+        color: $color-white;
+        cursor: pointer;
+        float: right;
+        font-size: 22px;
+        font-weight: 700;
+        padding: 10px 40px;
+    }
+}

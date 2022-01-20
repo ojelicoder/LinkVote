@@ -1,0 +1,131 @@
+@import '../../styles/variables';
+
+@mixin flex{
+    display: flex;
+    align-items: center;
+}
+
+@mixin point-box{
+    @include flex;
+    justify-content: center;
+    border: 1px solid $color-palladium;
+    border-radius: 5px;
+    background-color: $color-mercury;
+    width: 80px;
+    height: 80px;
+    font-size: 35px;
+}
+
+.add-link{
+    @include flex;
+    border: 1px solid $color-mercury;
+    background-color: $color-lynx-white;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 1px;
+    width: 100%;
+
+    &_icon{
+        @include point-box;
+        margin-right: 25px;
+    }
+}
+
+.list{
+    width: calc(100% + 10px);
+    margin: 0 -5px;
+}
+
+.item{
+    border: 1px solid transparent;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 5px;
+    position: relative;
+    transition: background-color .5s linear;
+
+    &:hover{
+        background-color: $color-lynx-white;
+        border: 1px solid $color-mercury;
+        cursor: pointer;
+
+        .item-delete{
+            visibility: visible;
+            opacity: 1;
+            right: -10px;
+            top: -10px;
+            position: absolute;
+            font-size: 22px;
+            color: $color-faded-red;
+            z-index: 1;
+            background: $color-white;
+            border-radius: 50%;
+        }
+    }
+
+    &-points{
+        @include point-box;
+        flex-direction: column;
+        line-height: 26px;
+        font-weight: 700;
+        margin-right: 10px;
+
+        span{
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+    &-vote{
+        cursor: pointer;
+        display: flex;
+        font-size: 12px;
+        font-weight: 500;
+
+        &_icon{
+            font-weight: 500;
+            opacity: .5;
+            transition: opacity color .5s;
+
+            &:hover{
+                opacity: 1;
+            }
+            + .item-vote_icon{
+                margin-left: 70px;
+            }
+
+            svg{
+                margin-right: 5px;
+            }
+        }
+        &_up{
+            &:hover{
+                color: $color-mid-green;                
+            }
+        }
+        &_down{
+            &:hover{
+                color: $color-faded-red;
+            }
+        }
+    }
+    &-name{
+        margin: 0;
+        text-transform: capitalize;
+        font-size: 22px;
+        font-weight: 500;
+    }
+    &-link{
+        display: flex;
+        font-size: 13px;
+        margin: 0 0 20px;
+        opacity: .5;
+        letter-spacing: 1px;
+    }
+    &-delete{
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity .5s linear;
+    }
+}
